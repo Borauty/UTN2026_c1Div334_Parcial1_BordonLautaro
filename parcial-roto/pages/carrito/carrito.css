@@ -81,32 +81,7 @@ main
     font-size: 20px;
 }
 
-.bloque-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    color: #fff;
-    font-size: 15px;
-}
 
-.nombre-item{
-    width: 50%;
-
-    text-align: center;
-}
-
-.cantidad-item{
-    width: 25%;
-
-    text-align: center;
-}
-
-.precio-item{
-    width: 25%;
-
-    text-align: center;
-}
 
 
 .celda-header-tabla-carrito

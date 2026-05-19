@@ -12,24 +12,22 @@ function cargarProductosCarrito()
     let carrito = obtenerCarrito();
     if (carrito.length > 0) {
         for (let index = 0; index < carrito.length; index++) {
-            tabla.innerHTML +=
-                `<li class="bloque-item">
-            <p class="nombre-item">
-                ${carrito[index].nombre}
-            </p>
-            <p class="cantidad-item">
-                ${carrito[index].cantidad}
-            </p>
-            <p class="precio-item">
-                ${carrito[index].precio}
-            </p>
-            </li>`;
+            tabla.innerHTML += `
+            <tr>
+            <td>${carrito[index].nombre}</td>
+            <td>${carrito[index].cantidad}</td>
+            <td>${carrito[index].precio}</td>
+            </tr>`;
             let precioProd = parseInt(carrito[index].precio.replace("$", ""));
             totalPrecio += precioProd * carrito[index].cantidad;
         }
         total.innerHTML = `<h2 id="valor-final">El valor final a pagar es de: $${totalPrecio}</h2>`
     } else {
-        tabla.innerHTML = `No hay productos en el carrito`
+        tabla.innerHTML = `<tr class="fila-header-carrito">
+                    <td class="celda-header-tabla-carrito">Nombre del producto</td>
+                    <td class="celda-header-tabla-carrito">Cantidad</td>
+                    <td class="celda-header-tabla-carrito">Precio unitario</td>
+                    </tr>`
         total.innerHTML = `<h2 id="valor-final">El valor final a pagar es de: $0</h2>`
 
     }
